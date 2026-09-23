@@ -1,10 +1,11 @@
 import ErrandListItem from "./ErrandListItem";
+import NewErrandForm from "./NewErrandForm";
 
 export default function ErrandList({ completedErrands, incompleteErrands }) {
   return (
     <div>
       <h1>My Errands</h1>
-      <p>New errand form will go here...</p>
+      <NewErrandForm />
       <h3>Completed:</h3>
       {completedErrands.map((errand, index) => (
         <ErrandListItem errand={errand} key={index} />
