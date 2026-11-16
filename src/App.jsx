@@ -11,11 +11,23 @@ function App() {
     { text: "Paint the walls", isCompleted: false },
   ]);
 
+  function markErrandAsCompleted(text) {
+    setIncompleteErrands(incompleteErrands.filter(er => er.text !== text));
+    setCompletedErrands(...completedErrands, incompleteErrands.find(er => er.text === text));
+  }
+
+  function deleteErrand(text) {
+    setCompletedErrands(completedErrands.filter(er => er.text !== text));
+  }
+
   return (
     <>
       <Errands
         completedErrands={completedErrands}
         incompleteErrands={incompleteErrands}
+        onCompletedClicked={}
+        onDeleteClicked={}
+        
       />
     </>
   );
